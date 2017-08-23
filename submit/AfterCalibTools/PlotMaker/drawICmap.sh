@@ -13,9 +13,9 @@
 # tagName="AlcaP0_2016_json2p07fb_"
 
 iter_ini=0
-iter_fin=5  # it is included in sequence below                     
+iter_fin=6  # it is included in sequence below                     
 
-wwwPath="/afs/cern.ch/user/m/mciprian/www/pi0calib/ICplot/"
+wwwPath="icplots/"
 eosPath="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/mciprian/"
 #eosPath="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/emanuele/"
 #eosPath="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/zhicaiz/"
@@ -37,6 +37,9 @@ done
 for i in `seq $iter_ini $iter_fin`
 do
     iterNumber="iter_$i"
+    mkdir -p $wwwPath/$dirName/$iterNumber/2DMaps/Barrel
+    mkdir -p $wwwPath/$dirName/$iterNumber/2DMaps/Endcap/EEp
+    mkdir -p $wwwPath/$dirName/$iterNumber/2DMaps/Endcap/EEm
     echo  "iter_$i"
     root -l -b -q 'drawICmap.C+("'$wwwPath'","'$eosPath'","'$dirName'","'$iterNumber'","'$tagName'","'$ECALdetToSkip'")'
 done
