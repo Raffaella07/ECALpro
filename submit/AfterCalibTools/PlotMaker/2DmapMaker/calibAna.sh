@@ -10,17 +10,13 @@
 
 iter_ini=4                                                      # first iteration to use
 iter_fin=4                                                      # last iteration to use: it is included in sequence below
-#path="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/emanuele/"  # path to directory on eos
-#path="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/mciprian/"  # path to directory on eos
-#path="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/zhicaiz/"  # path to directory on eos
 path="/store/group/dpg_ecal/alca_ecalcalib/piZero2017/mciprian/"  # path to directory on eos
 dirName="AlCaP0_IC2017_upTo31July2017_noCC"                            # dirname (see CalibCode/submit/parameters.py)
-#tagName="AlCaP0_Run2017B_3July_upToRun297723_ext1_"                           # TagName (see CalibCode/submit/parameters.py) 
 tagName="${dirName}_"
 
 Pi0orEta="Pi0"  # possible options are Pi0 and Eta, axis ranges are set a little differently
 
-wwwBasePath="/afs/cern.ch/user/m/mciprian/www/pi0calib/ICplot/"   # base directory where plots are stored (other directories are created inside this path) 
+wwwBasePath="./"   # base directory where plots are stored (other directories are created inside this path) 
 
 # list of source files to compile (except main) without extension (which is supposed to be .C in the following)
 sourceFileList=(calibAnaEcal_base calibAnaEcal calibAnaEcalEB calibAnaEcalEE)  
